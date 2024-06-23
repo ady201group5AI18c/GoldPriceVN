@@ -13,7 +13,7 @@ start_date = end_date - pd.DateOffset(months=6)
 last_6_months_data = data[(data['date'] >= start_date) & (data['date'] <= end_date)]
 
 # Extract relevant columns for the last 6 months
-buy_prices_last_6_months = last_6_months_data['buy']
+sell_prices_last_6_months = last_6_months_data['sell']
 
 # Function to clean price strings (remove commas and convert to float)
 def clean_price(price):
@@ -28,12 +28,12 @@ def clean_price(price):
         return None
 
 # Clean buy prices for the last 6 months
-buy_prices_cleaned_last_6_months = [clean_price(price) for price in buy_prices_last_6_months]
+sell_prices_cleaned_last_6_months = [clean_price(price) for price in sell_prices_last_6_months]
 
 # Calculate trends based on buy prices for the last 6 months
 trends_last_6_months = []
-for i in range(1, len(buy_prices_cleaned_last_6_months)):
-    change = ((buy_prices_cleaned_last_6_months[i] - buy_prices_cleaned_last_6_months[i-1]) / buy_prices_cleaned_last_6_months[i-1]) * 100
+for i in range(1, len(sell_prices_cleaned_last_6_months)):
+    change = ((sell_prices_cleaned_last_6_months[i] - sell_prices_cleaned_last_6_months[i-1]) / sell_prices_cleaned_last_6_months[i-1]) * 100
     trends_last_6_months.append(change)
 
 # Determine overall trend for the last 6 months
