@@ -69,4 +69,3 @@ print(f"Tổng tỷ lệ phần trăm tăng giá theo giá bán: {increase_perce
 print(f"Tổng tỷ lệ phần trăm giảm giá theo giá bán: {decrease_percentage_last_6_months:.2f}%")
 print(f"Xu hướng thay đổi giá vàng theo giá bán trong 6 tháng qua: {overall_trend_last_6_months}")
 
-increase_percentage_last_6_months, decrease_percentage_last_6_months, overall_trend_last_6_months
